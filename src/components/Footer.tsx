@@ -2,7 +2,8 @@
 import { FaReact, FaLinkedin, FaGithub, FaTelegram, FaLaptopCode } from 'react-icons/fa';  // Icone di React, LinkedIn, GitHub, Telegram
 import { RiTailwindCssFill } from "react-icons/ri";  // Icona di Tailwind CSS
 import { ImMail } from "react-icons/im";  // Icona per l'email
-import { EmojiRender } from "../util/EmojiRender.tsx";  // Componente personalizzato per renderizzare gli emoji
+import { EmojiRender } from "../util/EmojiRender.tsx";
+import React from "react";  // Componente personalizzato per renderizzare gli emoji
 
 // Definizione dell'interfaccia per i link social
 interface SocialLink {

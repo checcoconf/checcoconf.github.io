@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';  // Libreria per animazioni fluide
-import { Briefcase, GraduationCap, Award } from 'lucide-react';  // Icone da Lucide React
+import { Briefcase, GraduationCap, Award } from 'lucide-react';
+import React, {ReactNode} from "react";  // Icone da Lucide React
 
 // Definizione dell'interfaccia per gli item di ogni sezione
 interface SectionItem {
     title: string;
-    organization: JSX.Element;
+    organization: ReactNode;
     description: string;
     year: string;
     downloadLink: string | null;

@@ -13,7 +13,7 @@ import {
     SiDatagrip
 } from 'react-icons/si'; // Importa icone da SimpleIcons
 import { BiLogoMongodb } from 'react-icons/bi'; // Importa icona MongoDB da Brandico
-import { useEffect, useState, useRef} from "react"; // Importa hook di React
+import React, { useEffect, useState, useRef } from "react"; // Importa hook di React
 
 // Definizione dell'interfaccia per le competenze
 interface Skill {
@@ -74,9 +74,35 @@ export default function SkillsCarousel() {
     const [currentSection, setCurrentSection] = useState<number>(0);
     const [lastInteractionTime, setLastInteractionTime] = useState<number>(Date.now());
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+    const startXRef = useRef<number | null>(null);
 
     const resetAutoScroll = () => {
         setLastInteractionTime(Date.now());
+    };
+
+    const handleTouchStart = (event: React.TouchEvent) => {
+        startXRef.current = event.touches[0].clientX;
+    };
+
+    const handleTouchMove = (event: React.TouchEvent) => {
+        if (startXRef.current === null) return;
+
+        const currentX = event.touches[0].clientX;
+        const diffX = startXRef.current - currentX;
+
+        if (Math.abs(diffX) > 50) {
+            if (diffX > 0) {
+                setCurrentSection((prevSection) => (prevSection + 1) % sections.length); // Swipe verso sinistra
+            } else {
+                setCurrentSection((prevSection) => (prevSection - 1 + sections.length) % sections.length); // Swipe verso destra
+            }
+            startXRef.current = null; // Resetta il valore dopo aver gestito lo swipe
+            resetAutoScroll();
+        }
+    };
+
+    const handleTouchEnd = () => {
+        startXRef.current = null;
     };
 
     useEffect(() => {
@@ -101,7 +127,12 @@ export default function SkillsCarousel() {
     };
 
     return (
-        <section className="bg-gradient-to-r from-teal-100 to-cyan-100 py-6 sm:py-12 overflow-hidden">
+        <section
+            className="bg-gradient-to-r from-teal-100 to-cyan-100 py-6 sm:py-12 overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+        >
             <h2 className="mb-6 md:mb-10 text-2xl md:text-3xl font-bold text-center text-teal-700">
                 My Skills
             </h2>
