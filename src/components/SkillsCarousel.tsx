@@ -73,6 +73,7 @@ export default function SkillsCarousel() {
 
     const [currentSection, setCurrentSection] = useState<number>(0);
     const [lastInteractionTime, setLastInteractionTime] = useState<number>(Date.now());
+    const [isSwiping, setIsSwiping] = useState<boolean>(false);
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const startXRef = useRef<number | null>(null);
 
@@ -82,6 +83,7 @@ export default function SkillsCarousel() {
 
     const handleTouchStart = (event: React.TouchEvent) => {
         startXRef.current = event.touches[0].clientX;
+        setIsSwiping(true);
     };
 
     const handleTouchMove = (event: React.TouchEvent) => {
@@ -103,11 +105,12 @@ export default function SkillsCarousel() {
 
     const handleTouchEnd = () => {
         startXRef.current = null;
+        setIsSwiping(false);
     };
 
     useEffect(() => {
         const updateSectionAutomatically = () => {
-            if (Date.now() - lastInteractionTime >= 5000) {
+            if (!isSwiping && Date.now() - lastInteractionTime >= 5000) {
                 setCurrentSection((prevSection) => (prevSection + 1) % sections.length);
             }
         };
@@ -119,7 +122,7 @@ export default function SkillsCarousel() {
                 clearInterval(intervalRef.current);
             }
         };
-    }, [lastInteractionTime, sections.length]);
+    }, [lastInteractionTime, isSwiping, sections.length]);
 
     const goToSection = (index: number) => {
         setCurrentSection(index);
@@ -139,7 +142,7 @@ export default function SkillsCarousel() {
 
             <div className="flex justify-center">
                 <div className="w-full md:w-3/4 lg:w-1/2 min-h-[350px]">
-                    <div className="transition-all duration-500 ease-in-out">
+                    <div className={`transition-all duration-500 ease-in-out`}>
                         <div className="text-center mb-4 md:mb-6">
                             <h3 className="text-xl md:text-2xl font-semibold text-[#FFD700]">
                                 {sections[currentSection].title}
