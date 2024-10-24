@@ -120,13 +120,13 @@ export default function CurriculumTimeline() {
                                         </div>
                                         <div className="flex-grow">
                                             {/* Contenitore dell'item */}
-                                            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-[#FFD700]/20 relative">
+                                            <div className="bg-black rounded-lg p-6 shadow-lg border border-[#FFD700]/20 relative">
                                                 <h4 className="text-xl font-semibold mb-2 text-[#FFD700]">{item.title}</h4>
-                                                <p className="text-gray-300 font-medium mb-1">{item.organization}</p>
+                                                <p className="text-[#D4AF37] font-medium mb-1">{item.organization}</p>
 
                                                 {/* Descrizione suddivisa in righe */}
                                                 {item.description.split("\n").map((line, index) => (
-                                                    <p key={index} className="text-gray-400 mb-2">{line}</p>
+                                                    <p key={index} className="text-[#C0C0C0] mb-2">{line}</p>
                                                 ))}
 
                                                 <span className="text-[#FFD700] font-medium">{item.year}</span>
@@ -134,7 +134,7 @@ export default function CurriculumTimeline() {
                                                 {/* Bottone per scaricare il certificato se disponibile */}
                                                 {item.downloadLink && (
                                                     <a href={item.downloadLink} download
-                                                       className="w-full text-center block sm:w-auto text-[#FFD700] font-semibold bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-700 mt-4 sm:absolute sm:bottom-4 sm:right-4">
+                                                       className="w-full text-center block sm:w-auto text-[#C0C0C0] font-semibold bg-[#111111] px-4 py-2 rounded-lg border border-[#FFD700] hover:bg-[#1C1C1C] mt-4 sm:absolute sm:bottom-4 sm:right-4 transition-all duration-300 ease-in-out">
                                                         Scarica il certificato
                                                     </a>
                                                 )}

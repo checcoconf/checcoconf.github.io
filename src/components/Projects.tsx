@@ -65,7 +65,7 @@ export default function Projects() {
                     {projects.map((project: Project, index: number) => (
                         <motion.div
                             key={index}
-                            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden shadow-lg"
+                            className="bg-black rounded-lg overflow-hidden shadow-lg border border-[#FFD700]/20"
                             variants={itemVariants}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -93,7 +93,7 @@ function ProjectContent({ project }: { project: Project }) {
             <img src={project.image} alt={project.title} className="w-full" />
             <div className="p-4 flex flex-col justify-center items-center text-center">
                 <h3 className="text-xl font-semibold mb-2 text-[#FFD700]">{project.title}</h3>
-                <p className="text-gray-400">
+                <p className="text-[#C0C0C0]">
                     {project.description?.split('\n').map((line: string, index: number) => (
                         <span key={index} className={index === 0 ? 'font-bold text-[#FFD700]' : ''}>
                             {line}
