@@ -49,9 +49,9 @@ const itemVariants = {
 // Funzione principale che restituisce il componente Projects
 export default function Projects() {
     return (
-        <section className="bg-white py-12 md:py-20">
+        <section className="bg-black py-12 md:py-20">
             <div className="container mx-auto px-4">
-                <h2 className="mb-8 md:mb-12 text-2xl md:text-3xl font-bold text-center text-teal-600">
+                <h2 className="mb-8 md:mb-12 text-2xl md:text-3xl font-bold text-center text-[#FFD700]">
                     I Miei Ultimi Progetti
                 </h2>
 
@@ -65,7 +65,7 @@ export default function Projects() {
                     {projects.map((project: Project, index: number) => (
                         <motion.div
                             key={index}
-                            className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-lg overflow-hidden shadow-md"
+                            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg overflow-hidden shadow-lg"
                             variants={itemVariants}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -92,10 +92,10 @@ function ProjectContent({ project }: { project: Project }) {
         <>
             <img src={project.image} alt={project.title} className="w-full" />
             <div className="p-4 flex flex-col justify-center items-center text-center">
-                <h3 className="text-xl font-semibold mb-2 text-teal-700">{project.title}</h3>
-                <p className="text-gray-600">
+                <h3 className="text-xl font-semibold mb-2 text-[#FFD700]">{project.title}</h3>
+                <p className="text-gray-400">
                     {project.description?.split('\n').map((line: string, index: number) => (
-                        <span key={index} className={index === 0 ? 'font-bold' : ''}>
+                        <span key={index} className={index === 0 ? 'font-bold text-[#FFD700]' : ''}>
                             {line}
                             <br />
                         </span>

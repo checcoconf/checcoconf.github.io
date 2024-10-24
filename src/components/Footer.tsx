@@ -1,9 +1,8 @@
-// Importazione delle icone necessarie dalle librerie di React Icons
 import { FaReact, FaLinkedin, FaGithub, FaTelegram, FaLaptopCode } from 'react-icons/fa';  // Icone di React, LinkedIn, GitHub, Telegram
 import { RiTailwindCssFill } from "react-icons/ri";  // Icona di Tailwind CSS
 import { ImMail } from "react-icons/im";  // Icona per l'email
-import { EmojiRender } from "../util/EmojiRender.tsx";
-import React from "react";  // Componente personalizzato per renderizzare gli emoji
+import { EmojiRender } from "../util/EmojiRender.tsx";  // Componente personalizzato per renderizzare gli emoji
+import React from "react";
 
 // Definizione dell'interfaccia per i link social
 interface SocialLink {
@@ -22,7 +21,7 @@ const socialLinks: SocialLink[] = [
 // Funzione che restituisce il componente Footer
 export default function Footer() {
     return (
-        <footer className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white py-5">
+        <footer className="bg-black text-[#FFD700] py-5">
             <div className="lg:px-6 flex flex-col md:flex-row justify-between items-center">
 
                 {/* Sezione con le icone social */}
@@ -34,7 +33,7 @@ export default function Footer() {
                             href={link.href}
                             target="_blank"  // Apre il link in una nuova scheda
                             rel="noopener noreferrer"  // Sicurezza per evitare accessi indesiderati alla pagina principale
-                            className="text-white hover:text-teal-200"  // Cambia colore al passaggio del mouse
+                            className="text-[#FFD700] hover:text-[#DAA520] transition-colors"  // Cambia colore al passaggio del mouse
                         >
                             <link.icon size={28} />
                             {/* Mostra l'icona social con dimensione 28px */}
@@ -48,11 +47,11 @@ export default function Footer() {
                     <p className="text-md">
                         Realizzato con{" "}
                         <FaReact className="inline animate-spin"
-                                 style={{ animationDuration: "1.65s" }}/>
+                                 style={{ animationDuration: "1.65s", color: '#FFD700' }} />
                         {" + "}
-                        <RiTailwindCssFill className="inline"/> {/* Icona di Tailwind CSS */}
+                        <RiTailwindCssFill className="inline" style={{ color: '#FFD700' }}/> {/* Icona di Tailwind CSS */}
                         {" + "}
-                        <FaLaptopCode className="inline"/>
+                        <FaLaptopCode className="inline" style={{ color: '#FFD700' }}/>
                     </p>
 
                     {/* Nome del sito e emoji utilizzando il componente EmojiRender */}

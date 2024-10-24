@@ -56,9 +56,9 @@ const tools: Skill[] = [
 const SkillItem = ({ skill }: { skill: Skill }) => (
     <div className="flex flex-col items-center group">
         <div className="transition-transform duration-300 ease-in-out transform group-hover:scale-125">
-            <skill.icon size={48} className="text-teal-500" />
+            <skill.icon size={48} className="text-[#FFD700] group-hover:text-[#DAA520] transition-colors" />
         </div>
-        <p className="mt-4 text-md text-center text-teal-700 font-medium">{skill.name}</p>
+        <p className="mt-4 text-md text-center text-[#FFD700] font-medium">{skill.name}</p>
     </div>
 );
 
@@ -128,12 +128,12 @@ export default function SkillsCarousel() {
 
     return (
         <section
-            className="bg-gradient-to-r from-teal-100 to-cyan-100 py-6 sm:py-12 overflow-hidden"
+            className="bg-black py-6 sm:py-12 overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
         >
-            <h2 className="mb-6 md:mb-10 text-2xl md:text-3xl font-bold text-center text-teal-700">
+            <h2 className="mb-6 md:mb-10 text-2xl md:text-3xl font-bold text-center text-[#FFD700]">
                 My Skills
             </h2>
 
@@ -141,7 +141,7 @@ export default function SkillsCarousel() {
                 <div className="w-full md:w-3/4 lg:w-1/2 min-h-[350px]">
                     <div className="transition-all duration-500 ease-in-out">
                         <div className="text-center mb-4 md:mb-6">
-                            <h3 className="text-xl md:text-2xl font-semibold text-teal-700">
+                            <h3 className="text-xl md:text-2xl font-semibold text-[#FFD700]">
                                 {sections[currentSection].title}
                             </h3>
                         </div>
@@ -163,7 +163,7 @@ export default function SkillsCarousel() {
                     <div
                         key={index}
                         className={`h-3 w-3 mx-2 rounded-full cursor-pointer ${
-                            currentSection === index ? 'bg-teal-700' : 'bg-teal-300'
+                            currentSection === index ? 'bg-[#FFD700]' : 'bg-[#DAA520]'
                         }`}
                         onClick={() => goToSection(index)}
                     />

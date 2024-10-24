@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';  // Libreria per animazioni fluide
 import { Briefcase, GraduationCap, Award } from 'lucide-react';
-import React, {ReactNode} from "react";  // Icone da Lucide React
+import React, { ReactNode } from "react";  // Icone da Lucide React
 
 // Definizione dell'interfaccia per gli item di ogni sezione
 interface SectionItem {
@@ -96,9 +96,9 @@ const itemVariants = {
 // Componente principale del curriculum con animazioni
 export default function CurriculumTimeline() {
     return (
-        <section className="py-20 bg-gradient-to-b from-gray-900 to-gray-800">
+        <section className="py-20 bg-black">
             <div className="container mx-auto px-4">
-                <h2 className="mb-12 text-3xl font-bold text-center text-teal-400">Il Mio Curriculum</h2>
+                <h2 className="mb-12 text-3xl font-bold text-center text-[#FFD700]">Il Mio Curriculum</h2>
 
                 {/* Contenitore animato che racchiude le sezioni */}
                 <motion.div className="space-y-16" variants={containerVariants} initial="hidden" animate="visible">
@@ -106,8 +106,8 @@ export default function CurriculumTimeline() {
                         // Animazione per ogni sezione del curriculum
                         <motion.div key={sectionIndex} variants={sectionVariants}>
                             <div className="flex items-center mb-6">
-                                <section.icon className="w-8 h-8 text-teal-500 mr-3" /> {/* Icona della sezione */}
-                                <h3 className="text-2xl font-semibold text-teal-400">{section.title}</h3>
+                                <section.icon className="w-8 h-8 text-[#FFD700] mr-3" /> {/* Icona della sezione */}
+                                <h3 className="text-2xl font-semibold text-[#FFD700]">{section.title}</h3>
                             </div>
 
                             {/* Contenuto della sezione */}
@@ -116,12 +116,12 @@ export default function CurriculumTimeline() {
                                     // Animazione per ogni item della sezione
                                     <motion.div key={itemIndex} className="mb-8 flex items-start" variants={itemVariants}>
                                         <div className="mr-4 flex-shrink-0 mt-1">
-                                            <div className="w-4 h-4 bg-teal-500 rounded-full" /> {/* Indicatore di item */}
+                                            <div className="w-4 h-4 bg-[#FFD700] rounded-full" /> {/* Indicatore di item */}
                                         </div>
                                         <div className="flex-grow">
                                             {/* Contenitore dell'item */}
-                                            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-teal-500/20 relative">
-                                                <h4 className="text-xl font-semibold mb-2 text-teal-400">{item.title}</h4>
+                                            <div className="bg-gray-800 rounded-lg p-6 shadow-lg border border-[#FFD700]/20 relative">
+                                                <h4 className="text-xl font-semibold mb-2 text-[#FFD700]">{item.title}</h4>
                                                 <p className="text-gray-300 font-medium mb-1">{item.organization}</p>
 
                                                 {/* Descrizione suddivisa in righe */}
@@ -129,12 +129,12 @@ export default function CurriculumTimeline() {
                                                     <p key={index} className="text-gray-400 mb-2">{line}</p>
                                                 ))}
 
-                                                <span className="text-teal-500 font-medium">{item.year}</span>
+                                                <span className="text-[#FFD700] font-medium">{item.year}</span>
 
                                                 {/* Bottone per scaricare il certificato se disponibile */}
                                                 {item.downloadLink && (
                                                     <a href={item.downloadLink} download
-                                                       className="w-full text-center block sm:w-auto text-teal-500 font-semibold bg-teal-900 px-4 py-2 rounded-lg hover:bg-teal-700 mt-4 sm:absolute sm:bottom-4 sm:right-4">
+                                                       className="w-full text-center block sm:w-auto text-[#FFD700] font-semibold bg-gray-900 px-4 py-2 rounded-lg hover:bg-gray-700 mt-4 sm:absolute sm:bottom-4 sm:right-4">
                                                         Scarica il certificato
                                                     </a>
                                                 )}
@@ -143,7 +143,7 @@ export default function CurriculumTimeline() {
                                     </motion.div>
                                 ))}
                                 {/* Linea verticale di collegamento degli item */}
-                                <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-teal-500/20" />
+                                <div className="absolute left-2 top-0 bottom-0 w-0.5 bg-[#FFD700]/20" />
                             </div>
                         </motion.div>
                     ))}
