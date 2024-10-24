@@ -6,7 +6,7 @@ import Footer from "../components/Footer.tsx";
 
 export default function Page() {
     return (
-        <main className="min-h-screen bg-gradient-to-b from-teal-50 to-cyan-100 text-gray-800">
+        <main className="bg-black">
             <Header/>
             <SkillsCarousel/>
             <Curriculum/>
