@@ -82,7 +82,7 @@ export default function CurriculumTimeline() {
                                 {section.items.map((item, itemIndex) => (
                                     // Animazione per ogni item della sezione
                                     <motion.div key={itemIndex} className="mb-8 flex items-start" variants={itemVariants}>
-                                        <div className="mr-4 flex-shrink-0 mt-1">
+                                        <div className="mr-4 mt-1" >
                                             <div className="w-4 h-4 bg-[#FFD700] rounded-full" /> {/* Indicatore di item */}
                                         </div>
                                         <div className="flex-grow">
