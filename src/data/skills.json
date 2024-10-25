@@ -1,0 +1,25 @@
+{
+    "programmingSkills": [
+        { "name": "C", "icon": "SiC" },
+        { "name": "Java", "icon": "FaJava" },
+        { "name": "Python", "icon": "FaPython" },
+        { "name": "Javascript", "icon": "SiJavascript" },
+        { "name": "Typescript", "icon": "SiTypescript" }
+    ],
+    "ides": [
+        { "name": "Clion", "icon": "SiClion" },
+        { "name": "IntelliJ Idea", "icon": "SiIntellijidea" },
+        { "name": "Pycharm", "icon": "SiPycharm" },
+        { "name": "DataGrip", "icon": "SiDatagrip" },
+        { "name": "Visual Studio", "icon": "SiVisualstudio" },
+        { "name": "Arduino", "icon": "SiArduino" }
+    ],
+    "databases": [
+        { "name": "MySQL", "icon": "SiMysql" },
+        { "name": "MongoDB", "icon": "BiLogoMongodb" }
+    ],
+    "tools": [
+        { "name": "Postman", "icon": "SiPostman" },
+        { "name": "Github", "icon": "FaGithub" }
+    ]
+}

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Page.tsx';
-import './index.css';
+import Page from './Page.tsx';
+import '../styles/global.css'
 
 ReactDOM.render(
     <React.StrictMode>
-        <Home/>
+        <Page/>
     </React.StrictMode>,
     document.getElementById('root')
 );

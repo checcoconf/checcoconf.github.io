@@ -14,6 +14,7 @@ import {
 } from 'react-icons/si'; // Importa icone da SimpleIcons
 import { BiLogoMongodb } from 'react-icons/bi'; // Importa icona MongoDB da Brandico
 import React, { useEffect, useState, useRef } from "react"; // Importa hook di React
+import skillsData from '../data/skills.json'; // Assicurati che il percorso sia corretto
 
 // Definizione dell'interfaccia per le competenze
 interface Skill {
@@ -21,36 +22,48 @@ interface Skill {
     icon: React.ElementType; // Tipo dell'icona
 }
 
+// Mappa degli icone
+const iconMap: { [key: string]: React.ElementType } = {
+    "SiC": SiC,
+    "FaJava": FaJava,
+    "FaPython": FaPython,
+    "SiJavascript": SiJavascript,
+    "SiTypescript": SiTypescript,
+    "SiClion": SiClion,
+    "SiIntellijidea": SiIntellijidea,
+    "SiPycharm": SiPycharm,
+    "SiDatagrip": SiDatagrip,
+    "SiMysql": SiMysql,
+    "BiLogoMongodb": BiLogoMongodb,
+    "SiArduino": SiArduino,
+    "SiPostman": SiPostman,
+    "FaGithub": FaGithub,
+    "SiVisualstudio": SiVisualstudio,
+};
+
 // Definizione delle competenze di programmazione
-const programmingSkills: Skill[] = [
-    { name: "C", icon: SiC },
-    { name: "Java", icon: FaJava },
-    { name: "Python", icon: FaPython },
-    { name: "Javascript", icon: SiJavascript },
-    { name: "Typescript", icon: SiTypescript }
-];
+const programmingSkills: Skill[] = skillsData.programmingSkills.map(skill => ({
+    name: skill.name,
+    icon: iconMap[skill.icon]
+}));
 
 // Definizione delle IDE
-const ides: Skill[] = [
-    { name: "Clion", icon: SiClion },
-    { name: "IntelliJ Idea", icon: SiIntellijidea },
-    { name: "Pycharm", icon: SiPycharm },
-    { name: "DataGrip", icon: SiDatagrip },
-    { name: "Visual Studio", icon: SiVisualstudio },
-    { name: "Arduino", icon: SiArduino }
-];
+const ides: Skill[] = skillsData.ides.map(skill => ({
+    name: skill.name,
+    icon: iconMap[skill.icon]
+}));
 
 // Definizione dei database
-const databases: Skill[] = [
-    { name: "MySQL", icon: SiMysql },
-    { name: "MongoDB", icon: BiLogoMongodb }
-];
+const databases: Skill[] = skillsData.databases.map(skill => ({
+    name: skill.name,
+    icon: iconMap[skill.icon]
+}));
 
 // Definizione degli strumenti di sviluppo
-const tools: Skill[] = [
-    { name: "Postman", icon: SiPostman },
-    { name: "Github", icon: FaGithub }
-];
+const tools: Skill[] = skillsData.tools.map(skill => ({
+    name: skill.name,
+    icon: iconMap[skill.icon]
+}));
 
 // Componente per ogni competenza
 const SkillItem = ({ skill }: { skill: Skill }) => (
@@ -128,7 +141,7 @@ export default function SkillsCarousel() {
 
     return (
         <section
-            className="bg-black py-6 sm:py-12 overflow-hidden"
+            className="py-6 sm:py-12 overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}

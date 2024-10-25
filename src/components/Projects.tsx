@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import projectsData from '../data/projects.json';
 
 // Definizione dell'interfaccia per il tipo Project
 interface Project {
@@ -9,24 +10,7 @@ interface Project {
 }
 
 // Array dei progetti con titolo, descrizione, immagine e, se presente, un link al progetto
-const projects: Project[] = [
-    {
-        title: "POSD SYSTEM",
-        description: "Università degli studi Aldo Moro - Bari\nAnno Accademico 2023 - 2024\nIngegneria del Software - Caso di studio",
-        image: "/POSD_System.png",
-        link: "https://github.com/checcoconf/POSD_System"
-    },
-    {
-        title: "CODING IN PROGRESS",
-        description: "",
-        image: "/coding.png"
-    },
-    {
-        title: "CODING IN PROGRESS",
-        description: "",
-        image: "/coding.png"
-    }
-];
+const projects: Project[] = projectsData;
 
 // Varianti di animazione per il contenitore dei progetti
 const containerVariants = {
@@ -49,7 +33,7 @@ const itemVariants = {
 // Funzione principale che restituisce il componente Projects
 export default function Projects() {
     return (
-        <section className="bg-black py-12 md:py-20">
+        <section className="py-12 md:py-20">
             <div className="container mx-auto px-4">
                 <h2 className="mb-8 md:mb-12 text-2xl md:text-3xl font-bold text-center text-[#FFD700]">
                     I Miei Ultimi Progetti
@@ -65,7 +49,7 @@ export default function Projects() {
                     {projects.map((project: Project, index: number) => (
                         <motion.div
                             key={index}
-                            className="bg-black rounded-lg overflow-hidden shadow-lg border border-[#FFD700]/20"
+                            className="rounded-lg overflow-hidden shadow-lg border border-[#FFD700]/20"
                             variants={itemVariants}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}

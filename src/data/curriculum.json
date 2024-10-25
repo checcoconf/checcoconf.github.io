@@ -1,0 +1,60 @@
+[
+    {
+        "title": "Esperienza Lavorativa",
+        "icon": "Briefcase",
+        "items": [
+            {
+                "title": "Co-Host",
+                "organization": {
+                    "name": "Le Chiavi di San Pietro - Noci (BA)",
+                    "url": "https://g.co/kgs/Q5xrb9X"
+                },
+                "description": "- Gestione prenotazioni e comunicazione con gli ospiti\n- Gestione social media\n- Massimizzazione visibilità online",
+                "year": "Luglio 2023 - Presente",
+                "downloadLink": null
+            }
+        ]
+    },
+    {
+        "title": "Istruzione",
+        "icon": "GraduationCap",
+        "items": [
+            {
+                "title": "Laurea triennale",
+                "organization": {
+                    "name": "Università degli Studi di Bari",
+                    "url": "https://www.uniba.it/it"
+                },
+                "description": "Laurea Triennale in Informatica e Tecnologie per la Produzione del Software (L-31)",
+                "year": "Settembre 2022 - in corso",
+                "downloadLink": null
+            },
+            {
+                "title": "Diploma quinquennale",
+                "organization": {
+                    "name": "IISS Luigi dell'Erba - Castellana Grotte (BA)",
+                    "url": "https://www.luigidellerba.edu.it/"
+                },
+                "description": "Indirizzo: ITIA - INFORMATICA E TELECOMUNICAZIONI - ARTICOLAZIONE INFORMATICA\nVotazione: 77/100 (settantasette su cento)",
+                "year": "Settembre 2017 - Giugno 2022",
+                "downloadLink": null
+            }
+        ]
+    },
+    {
+        "title": "Certificazioni",
+        "icon": "Award",
+        "items": [
+            {
+                "title": "Artificial Intelligence",
+                "organization": {
+                    "name": "Profession AI",
+                    "url": "https://profession.ai/"
+                },
+                "description": "- Basi di Machine Learning supervisionato\n- Basi di Deep Learning\n- Multilayer Perceptron e reti neurali convoluzionali\n- Cenni di modelli generativi\n- Reti ricorrenti e trasformers\n- Google Colaboratory",
+                "year": "Giugno 2024",
+                "downloadLink": "https://mycourse.app/WWckMuNETVmG5Jnn8"
+            }
+        ]
+    }
+]

@@ -1,11 +1,15 @@
-import { motion } from 'framer-motion';  // Libreria per animazioni fluide
+import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Award } from 'lucide-react';
-import React, { ReactNode } from "react";  // Icone da Lucide React
+import React from "react";
+import curriculumData from '../data/curriculum.json';
 
 // Definizione dell'interfaccia per gli item di ogni sezione
 interface SectionItem {
     title: string;
-    organization: ReactNode;
+    organization: {
+        name: string;
+        url: string;
+    };
     description: string;
     year: string;
     downloadLink: string | null;
@@ -18,55 +22,18 @@ interface Section {
     items: SectionItem[];
 }
 
-// Array di sezioni per il curriculum: Esperienza Lavorativa, Istruzione e Certificazioni
-const sections: Section[] = [
-    {
-        title: "Esperienza Lavorativa",
-        icon: Briefcase,
-        items: [
-            {
-                title: "Co-Host",
-                organization: <a href="https://g.co/kgs/Q5xrb9X" target="_blank" rel="noopener noreferrer">Le Chiavi di San Pietro - Noci (BA)</a>,
-                description: "- Gestione prenotazioni e comunicazione con gli ospiti\n- Gestione social media\n- Massimizzazione visibilità online",
-                year: "Luglio 2023 - Presente",
-                downloadLink: null
-            }
-        ]
-    },
-    {
-        title: "Istruzione",
-        icon: GraduationCap,
-        items: [
-            {
-                title: "Laurea triennale",
-                organization: <a href="https://www.uniba.it/it" target="_blank" rel="noopener noreferrer">Università degli Studi di Bari</a>,
-                description: "Laurea Triennale in Informatica e Tecnologie per la Produzione del Software (L-31)",
-                year: "Settembre 2022 - in corso",
-                downloadLink: null
-            },
-            {
-                title: "Diploma quinquennale",
-                organization: <a href="https://www.luigidellerba.edu.it/" target="_blank" rel="noopener noreferrer">IISS Luigi dell'Erba - Castellana Grotte (BA)</a>,
-                description: "Indirizzo: ITIA - INFORMATICA E TELECOMUNICAZIONI - ARTICOLAZIONE INFORMATICA\nVotazione: 77/100 (settantasette su cento)",
-                year: "Settembre 2017 - Giugno 2022",
-                downloadLink: null
-            }
-        ]
-    },
-    {
-        title: "Certificazioni",
-        icon: Award,
-        items: [
-            {
-                title: "Artificial Intelligence",
-                organization: <a href="https://profession.ai/" target="_blank" rel="noopener noreferrer">Profession AI</a>,
-                description: "- Basi di Machine Learning supervisionato\n- Basi di Deep Learning\n- Multilayer Perceptron e reti neurali convoluzionali\n- Cenni di modelli generativi\n- Reti ricorrenti e trasformers\n- Google Colaboratory",
-                year: "Giugno 2024",
-                downloadLink: "https://mycourse.app/WWckMuNETVmG5Jnn8"
-            }
-        ]
-    }
-];
+// Mappatura delle icone dal nome al componente
+const iconMap: { [key: string]: React.ElementType } = {
+    Briefcase: Briefcase,
+    GraduationCap: GraduationCap,
+    Award: Award,
+};
+
+// Utilizza i dati importati e mappa le icone
+const sections: Section[] = curriculumData.map(section => ({
+    ...section,
+    icon: iconMap[section.icon], // Imposta l'icona utilizzando la mappatura
+}));
 
 // Varianti di animazione per il contenitore, le sezioni e gli elementi
 const containerVariants = {
@@ -96,7 +63,7 @@ const itemVariants = {
 // Componente principale del curriculum con animazioni
 export default function CurriculumTimeline() {
     return (
-        <section className="py-20 bg-black">
+        <section className="py-20">
             <div className="container mx-auto px-4">
                 <h2 className="mb-12 text-3xl font-bold text-center text-[#FFD700]">Il Mio Curriculum</h2>
 
@@ -120,9 +87,11 @@ export default function CurriculumTimeline() {
                                         </div>
                                         <div className="flex-grow">
                                             {/* Contenitore dell'item */}
-                                            <div className="bg-black rounded-lg p-6 shadow-lg border border-[#FFD700]/20 relative">
+                                            <div className="rounded-lg p-6 shadow-lg border border-[#FFD700]/20 relative">
                                                 <h4 className="text-xl font-semibold mb-2 text-[#FFD700]">{item.title}</h4>
-                                                <p className="text-[#D4AF37] font-medium mb-1">{item.organization}</p>
+                                                <p className="text-[#D4AF37] font-medium mb-1">
+                                                    <a href={item.organization.url} target="_blank" rel="noopener noreferrer">{item.organization.name}</a>
+                                                </p>
 
                                                 {/* Descrizione suddivisa in righe */}
                                                 {item.description.split("\n").map((line, index) => (

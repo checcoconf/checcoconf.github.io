@@ -1,0 +1,18 @@
+[
+    {
+        "href": "https://www.linkedin.com/in/confortifrancesco/",
+        "icon": "FaLinkedin"
+    },
+    {
+        "href": "https://github.com/checcoconf",
+        "icon": "FaGithub"
+    },
+    {
+        "href": "https://t.me/checcoconf",
+        "icon": "FaTelegram"
+    },
+    {
+        "href": "mailto:francesco.conforti03@icloud.com",
+        "icon": "ImMail"
+    }
+]

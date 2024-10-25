@@ -1,23 +1,32 @@
 import { FaLinkedin, FaGithub, FaTelegram } from 'react-icons/fa';
 import { ImMail } from "react-icons/im";
 import React from 'react';
+import socialData from "../data/social.json";
 
-// Interface for social links
+// Definizione dell'interfaccia per i link social
 interface SocialLink {
     href: string;
     icon: React.ElementType;
 }
 
-const socialLinks: SocialLink[] = [
-    { href: "https://www.linkedin.com/in/confortifrancesco/", icon: FaLinkedin },
-    { href: "https://github.com/checcoconf", icon: FaGithub },
-    { href: "https://t.me/checcoconf", icon: FaTelegram },
-    { href: "mailto:francesco.conforti03@icloud.com", icon: ImMail }
-];
+// Mappa delle icone per facilitare la ricerca
+const iconMap: { [key: string]: React.ElementType } = {
+    FaLinkedin: FaLinkedin,
+    FaGithub: FaGithub,
+    FaTelegram: FaTelegram,
+    ImMail: ImMail
+};
 
+// Funzione che restituisce il componente Header
 export default function Header() {
+    // Mappa i dati JSON agli oggetti delle icone
+    const socialLinks: SocialLink[] = socialData.map(link => ({
+        href: link.href,
+        icon: iconMap[link.icon] // Utilizza la mappa per ottenere l'icona corrispondente
+    }));
+
     return (
-        <header className="bg-black py-12 lg:py-20 text-center w-full px-4">
+        <header className="py-12 lg:py-20 text-center w-full px-4">
             <img
                 src="/profilo.jpg"
                 width={150}
