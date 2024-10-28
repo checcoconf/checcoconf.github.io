@@ -47,14 +47,15 @@ export default function Footer() {
                 <div className="text-center md:text-right mt-4 md:mt-0 lg:text-xl">
                     <p className="text-md">
                         Realizzato con{" "}
-                        <FaReact className="inline animate-spin" style={{ animationDuration: "1.65s", color: '#FFD700' }} />
+                        <FaReact className="inline animate-spin"
+                                 style={{animationDuration: "1.65s", color: '#FFD700'}}/>
                         {" + "}
-                        <RiTailwindCssFill className="inline" style={{ color: '#FFD700' }}/>
+                        <RiTailwindCssFill className="inline" style={{color: '#FFD700'}}/>
                         {" + "}
-                        <FaLaptopCode className="inline" style={{ color: '#FFD700' }}/>
+                        <FaLaptopCode className="inline" style={{color: '#FFD700'}}/>
                     </p>
                     <span className="inline-flex items-center">
-                        Designed by <span className="ml-1"></span><strong>Francesco Conforti</strong> <EmojiRender><span className="ml-2">🇮🇹</span></EmojiRender>
+                        Designed by&nbsp;<span className="font-bold">Francesco Conforti</span> <EmojiRender><span className="ml-2">🇮🇹</span></EmojiRender>
                     </span>
                 </div>
             </div>
