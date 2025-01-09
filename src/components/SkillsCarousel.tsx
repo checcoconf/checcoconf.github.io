@@ -1,4 +1,4 @@
-import { FaJava, FaPython, FaGithub } from 'react-icons/fa'; // Importa icone da FontAwesome
+import { FaJava, FaPython, FaGithub, FaDocker, FaUbuntu } from 'react-icons/fa'; // Importa icone da FontAwesome
 import {
     SiC,
     SiTypescript,
@@ -10,7 +10,8 @@ import {
     SiClion,
     SiIntellijidea,
     SiPycharm,
-    SiDatagrip
+    SiDatagrip,
+    SiPostgresql
 } from 'react-icons/si'; // Importa icone da SimpleIcons
 import { BiLogoMongodb } from 'react-icons/bi'; // Importa icona MongoDB da Brandico
 import React, { useEffect, useState, useRef } from "react"; // Importa hook di React
@@ -39,6 +40,9 @@ const iconMap: { [key: string]: React.ElementType } = {
     "SiPostman": SiPostman,
     "FaGithub": FaGithub,
     "SiVisualstudio": SiVisualstudio,
+    "SiPostgresql": SiPostgresql,
+    "FaUbuntu": FaUbuntu,
+    "FaDocker": FaDocker
 };
 
 // Definizione delle competenze di programmazione
@@ -78,10 +82,10 @@ const SkillItem = ({ skill }: { skill: Skill }) => (
 // Componente principale del carosello delle competenze
 export default function SkillsCarousel() {
     const sections = [
-        { title: "Programming Languages", skills: programmingSkills, layout: 'grid' },
-        { title: "IDEs", skills: ides, layout: 'grid' },
-        { title: "Databases", skills: databases, layout: 'column' },
-        { title: "Tools", skills: tools, layout: 'column' },
+        { title: "Programming Languages", skills: programmingSkills },
+        { title: "IDEs", skills: ides },
+        { title: "Databases", skills: databases },
+        { title: "Tools", skills: tools },
     ];
 
     const [currentSection, setCurrentSection] = useState<number>(0);
@@ -158,11 +162,7 @@ export default function SkillsCarousel() {
                                 {sections[currentSection].title}
                             </h3>
                         </div>
-                        <div className={`grid gap-4 sm:gap-6 min-h-[300px] mt-10 ${
-                            sections[currentSection].layout === 'column'
-                                ? 'grid-cols-1'
-                                : 'grid-cols-2 sm:grid-cols-3'
-                        }`}>
+                        <div className="grid gap-4 sm:gap-6 min-h-[300px] mt-10 grid-cols-2 sm:grid-cols-3">
                             {sections[currentSection].skills.map((skill: Skill, index: number) => (
                                 <SkillItem key={index} skill={skill} />
                             ))}

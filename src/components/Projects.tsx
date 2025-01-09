@@ -25,7 +25,8 @@ const containerVariants = {
 const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
-        opacity: 1, y: 0,
+        opacity: 1,
+        y: 0,
         transition: { duration: 0.5 }
     }
 };
@@ -34,14 +35,14 @@ const itemVariants = {
 export default function Projects() {
     return (
         <section className="py-12 md:py-20">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 max-w-screen-2xl">
                 <h2 className="mb-8 md:mb-12 text-2xl md:text-3xl font-bold text-center text-[#FFD700]">
                     I Miei Ultimi Progetti
                 </h2>
 
                 {/* Contenitore animato per i progetti */}
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
@@ -74,7 +75,15 @@ export default function Projects() {
 function ProjectContent({ project }: { project: Project }) {
     return (
         <>
-            <img src={project.image} alt={project.title} className="w-full" />
+            {/* Wrapper per l'immagine con rapporto d'aspetto fisso */}
+            <div className="aspect-[4/3] overflow-hidden">
+                <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                />
+            </div>
+            {/* Contenuto descrittivo */}
             <div className="p-4 flex flex-col justify-center items-center text-center">
                 <h3 className="text-xl font-semibold mb-2 text-[#FFD700]">{project.title}</h3>
                 <p className="text-[#C0C0C0]">

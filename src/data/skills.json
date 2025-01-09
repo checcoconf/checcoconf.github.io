@@ -16,10 +16,13 @@
     ],
     "databases": [
         { "name": "MySQL", "icon": "SiMysql" },
+        { "name": "PostgreSQL", "icon": "SiPostgresql"},
         { "name": "MongoDB", "icon": "BiLogoMongodb" }
     ],
     "tools": [
-        { "name": "Postman", "icon": "SiPostman" },
-        { "name": "Github", "icon": "FaGithub" }
+        { "name": "Ubuntu Server", "icon": "FaUbuntu"},
+        { "name": "Docker", "icon": "FaDocker"},
+        { "name": "Postman", "icon": "SiPostman"},
+        { "name": "Github", "icon": "FaGithub"}
     ]
 }

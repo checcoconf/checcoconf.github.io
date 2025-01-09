@@ -4,6 +4,16 @@
         "icon": "Briefcase",
         "items": [
             {
+                "title": "Co-founder",
+                "organization": {
+                    "name": "Aletheia ~ Startup - Bari",
+                    "url": "https://github.com/Aletheia-Startup"
+                },
+                "description": "- Python\n- PostgreSQL\n- Ubuntu Server\n- Docker",
+                "year": "Ottobre 2024 - Presente",
+                "downloadLink": null
+            },
+            {
                 "title": "Co-Host",
                 "organization": {
                     "name": "Le Chiavi di San Pietro - Noci (BA)",
