@@ -1,13 +1,13 @@
 [
     {
         "title": "POSD SYSTEM",
-        "description": "Università degli studi Aldo Moro\n\nAnno Accademico 2023 - 2024\nIngegneria del Software - Caso di studio",
+        "description": "Università degli studi Aldo Moro\n\nAnno Accademico 2023 - 2024\nIngegneria del Software\nCaso di studio",
         "image": "/POSD_System.png",
         "link": "https://github.com/checcoconf/POSD_System"
     },
     {
         "title": "ANIMAL SOCIETY",
-        "description": "Università degli studi Aldo Moro\n\nAnno Accademico 2024 - 2025\nProgrammazione per il Web - Aletheia",
+        "description": "Università degli studi Aldo Moro\n\nAnno Accademico 2024 - 2025\nProgrammazione per il Web \nAletheia",
         "image": "/Aletheia.png",
         "link": "https://github.com/Aletheia-Startup/Animal-Society"
     },
