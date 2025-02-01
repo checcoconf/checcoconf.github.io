@@ -23,6 +23,6 @@
         { "name": "Ubuntu Server", "icon": "FaUbuntu"},
         { "name": "Docker", "icon": "FaDocker"},
         { "name": "Postman", "icon": "SiPostman"},
-        { "name": "Github", "icon": "FaGithub"}
+        { "name": "Git", "icon": "FaGitAlt"}
     ]
 }

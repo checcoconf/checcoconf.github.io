@@ -1,4 +1,4 @@
-import { FaJava, FaPython, FaGithub, FaDocker, FaUbuntu } from 'react-icons/fa'; // Importa icone da FontAwesome
+import { FaJava, FaPython, FaGitAlt, FaDocker, FaUbuntu } from 'react-icons/fa'; // Importa icone da FontAwesome
 import {
     SiC,
     SiTypescript,
@@ -38,7 +38,7 @@ const iconMap: { [key: string]: React.ElementType } = {
     "BiLogoMongodb": BiLogoMongodb,
     "SiArduino": SiArduino,
     "SiPostman": SiPostman,
-    "FaGithub": FaGithub,
+    "FaGitAlt": FaGitAlt,
     "SiVisualstudio": SiVisualstudio,
     "SiPostgresql": SiPostgresql,
     "FaUbuntu": FaUbuntu,
